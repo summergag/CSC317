@@ -7,7 +7,7 @@
 - [Student Name 4] - [Student ID] - [GitHub Username] - **AI Image+Text Prompt CSS** (if applicable)
 
 **Elected Submitter:** Nathan Muniz - natemuniz
-**Repository Link:** https://github.com/[natemuniz]/CSC317/tree/main/assignments/3
+**Repository Link:** https://github.com/natemuniz/CSC317/tree/main/assignments/3
 
 ## Work Distribution
 - Hand-written CSS (Collaborative): Nathan Muniz and Summer Gagliardotto
