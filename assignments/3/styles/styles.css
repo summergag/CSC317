@@ -1,11 +1,17 @@
 body {
     font-family: 'Times New Roman', sans-serif
 }
+
 header{
     text-align: center;
     padding: 1rem;
-    background: white;
+    background: #2d9d92;
 }
+
+header h1 {
+    color: white;
+}
+
 h1 {
     margin: 0.5rem 0;
     color: #2d9d92;
@@ -16,7 +22,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 1.5rem;
     margin-bottom: -2rem;
 }
 
