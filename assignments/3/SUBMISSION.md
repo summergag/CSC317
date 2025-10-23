@@ -3,7 +3,7 @@
 **Group Members:**
 - Nathan Muniz        - 925028634 - natemuniz
 - Summer Gagliardotto - 925018520 - summergag
-- [Student Name 3] - [Student ID] - [GitHub Username]
+- Akshith Gojuru      - 924993456 - Gakshith
 - [Student Name 4] - [Student ID] - [GitHub Username] (if applicable)
 
 **Elected Submitter:** Nathan Muniz - natemuniz
@@ -22,7 +22,7 @@
 ### Summer Gagliardotto - Hand-written CSS (Part 2)
 [Individual reflection on lessons learned and contribution to hand-written CSS]
 
-### [Member 3 Name] - AI Text Prompt CSS
+### Akshith Gojuru - AI Text Prompt CSS
 [Individual reflection on AI prompting experience and lessons learned]
 
 ### [Member 4 Name] - AI Image+Text Prompt CSS (if applicable)
