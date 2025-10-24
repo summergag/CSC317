@@ -1,10 +1,10 @@
 # CSC 317 Assignment 3 Group Submission
 
 **Group Members:**
-- Nathan Muniz        - 925028634 - natemuniz
-- Summer Gagliardotto - 925018520 - summergag
-- Akshith Gojuru      - 924993456 - Gakshith
-- [Student Name 4] - [Student ID] - [GitHub Username] (if applicable)
+- Nathan Muniz          - 925028634 - natemuniz
+- Summer Gagliardotto   - 925018520 - summergag
+- Akshith Gojuru        - 924993456 - Gakshith
+- Papat Thanitkhunkitti - 924975464 - lRPNSl
 
 **Elected Submitter:** Nathan Muniz - natemuniz
 **Repository Link:** https://github.com/natemuniz/CSC317/tree/main/assignments/3
@@ -25,7 +25,7 @@
 ### Akshith Gojuru - AI Text Prompt CSS
 [Individual reflection on AI prompting experience and lessons learned]
 
-### [Member 4 Name] - AI Image+Text Prompt CSS (if applicable)
+### Papat Thanitkhunkitti - AI Image+Text Prompt CSS 
 [Individual reflection on AI prompting with images and lessons learned]
 
 ## Group Preferred Version
