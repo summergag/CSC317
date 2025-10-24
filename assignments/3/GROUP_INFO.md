@@ -15,6 +15,6 @@
   - Summer gagliardotto: Implemented the style for sections: main, h2, ul, li, .dropdown-content, .dropdown:hover .dropdown-content, and footer
 - AI Text Prompt CSS: Akshith Gojuru
 - AI Image+Text Prompt CSS: Papat Thanitkhunkitti
-- Hybrid Solution: Nathan Muniz, Summer Gagliardotto, Akshith Gojuru, and
-- Switcher Implementation: Nathan Muniz, Summer Gagliardotto, Akshith Gojuru, and
+- Hybrid Solution: Nathan Muniz, Summer Gagliardotto, Akshith Gojuru, and Papat Thanitkhunkitti
+- Switcher Implementation: Nathan Muniz, Summer Gagliardotto, Akshith Gojuru, and Papat Thanitkhunkitti
 - Documentation & Analysis: [Lead member name(s)]
