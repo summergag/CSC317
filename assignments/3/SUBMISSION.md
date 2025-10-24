@@ -20,7 +20,7 @@
 [Individual reflection on lessons learned and contribution to hand-written CSS]
 
 ### Summer Gagliardotto - Hand-written CSS (Part 2)
-[Individual reflection on lessons learned and contribution to hand-written CSS]
+I found this assignment to be very helpful learning how to style your web page. I liked doing one style section at a time to see how it affects the page. I also found this assignment to be very fun and focus on my creative side. The page was still pretty simple, but maybe next time, I can make it even better. The sections I contributted to the hand-written stylesheet were the main, h2, ul, li, .dropdown-content, .dropdown:hover .dropdown-content, and footer. We all did our own ai prompt and I'm not sure why, but I had a lot of trouble getting AI to create the css file that I wanted. It was very unpleasing to look at and preffered the handwritten one we made. I might have prompted it too much to do at once. I kept asking other things after to fix it, but it just kept getting worse...
 
 ### Akshith Gojuru - AI Text Prompt CSS
 [Individual reflection on AI prompting experience and lessons learned]
