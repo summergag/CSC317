@@ -1,9 +1,7 @@
-console.log("Script is running!");
+ const greeting = "JavaScript";
 
-// const greeting = "JavaScript";
+ const createMessage = (name) => {
+     return `Hello, ${name}!`;
+ }
 
-// const createMessage = (name) => {
-//     return `Hello, ${name}!`;
-// }
-
-// console.log(createMessage(greeting));
+ console.log(createMessage(greeting));
