@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device, initial scale=1" />
+        <title>Calculator</title>
+
+        <link rel="stylesheet" href="styles/styles.css">
+        <script src="scripts/calculator.js" defer></script>
+    </head>
+    <body>
+        <div class="calculator" aria-label="Calculator">
+            <div class="display" aria-live="polite" aria-atomic="true">
+                <div class="value" id="display">0</div>
+            </div>
+
+            <div class="keys" id="keys">
+
+                <!-- Row 1 -->
+                 <button class="button util" data-action="clear" aria-label="All Clear">AC</button>
+                 <button class="button util" data-action="sign" aria-label="Toggle Sign">+/-</button>
+                 <button class="button util" data-action="percent" aria-label="Percent">%</button>
+                 <button class="button operation" data-operation="/" aria-label="Divide">÷</button>
+
+                <!-- Row 2 -->
+                 <button class="button" data-digit="7">7</button>
+                 <button class="button" data-digit="8">8</button>
+                 <button class="button" data-digit="9">9</button>
+                 <button class="button operation" data-operation="*" aria-label="Multiply">×</button>
+
+                <!-- Row 3 -->
+                 <button class="button" data-digit="4">4</button>
+                 <button class="button" data-digit="5">5</button>
+                 <button class="button" data-digit="6">6</button>
+                 <button class="button operation" data-operation="-" aria-label="Subtract">-</button>
+
+                <!-- Row 4 -->
+                 <button class="button" data-digit="1">1</button>
+                 <button class="button" data-digit="2">2</button>
+                 <button class="button" data-digit="3">3</button>
+                 <button class="button operation" data-operation="+" aria-label="Add">+</button>
+
+                 <!-- Row 5 -->
+                 <button class="button span-2" data-digit="0">0</button>
+                 <button class="button" data-decimal=".">.</button>
+                 <button class="button operation" data-action="equals" aria-label="Equals">=</button>
+            </div>
+        </div>
+    </body>
+</html>
