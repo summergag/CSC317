@@ -80,9 +80,10 @@ user-select: none;
 .button:active { 
     transform: translateY(1px) scale(0.99); 
 }
-.button:focus-visible { 
-    outline: 2px solid #fff3; outline-offset: 2px; 
-}
+ .button:focus-visible { 
+    outline: 2px solid #fff3; 
+    outline-offset: 2px; 
+} 
 
 
 .button.util { 
