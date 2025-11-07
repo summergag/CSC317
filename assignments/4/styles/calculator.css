@@ -1,16 +1,11 @@
 :root {
-    --backgroundColor: #000;      
+    --backgroundColor: white;      
     --displayBackground: #1c1c1c; 
     --textColor: #fff;
 
     --btnNumColor: #333333;
-    --btnNumHover: #4d4d4d;
-
     --btnUtilColor: #a5a5a5;
-    --btnUtilHover: #c0c0c0;
-
     --btnOpColor: #ff9f0a;
-    --btnOpHover: #f7a526;
 
     --shadow: 0 8px 20px rgba(0,0,0,.35);
     --radius: 24px;
@@ -31,10 +26,75 @@ body {
 
 .calculator {
 width: min(420px, 95vw);
-background: var(--bg);
+background: var(--displayBackground);
 border-radius: 32px;
 box-shadow: var(--shadow);
 display: grid;
 grid-template-rows: auto 1fr;
 gap: 12px;
+}
+
+.display {
+background: var(--displayBackground);
+border-radius: 32px;
+min-height: 120px;
+padding: 24px 20px;
+display: flex;
+align-items: end;
+justify-content: end;
+font-variant-numeric: tabular-nums;
+overflow: hidden;
+}
+
+.display .value {
+font-size: clamp(32px, 8vw, 56px);
+line-height: 1;
+letter-spacing: 0.5px;
+user-select: none;
+white-space: nowrap;
+text-overflow: ellipsis;
+max-width: 100%;
+overflow: hidden;
+}
+
+.keys {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 12px;
+padding: 12px;
+}
+
+.button {
+border: none;
+border-radius: var(--radius);
+padding: 18px;
+font-size: 24px;
+color: var(--textColor);
+background: var(--btnNumColor);
+cursor: pointer;
+box-shadow: var(--shadow);
+transition: transform 120ms ease, filter 120ms ease, background 120ms ease;
+user-select: none;
+}
+
+.button:active { 
+    transform: translateY(1px) scale(0.99); 
+}
+.button:focus-visible { 
+    outline: 2px solid #fff3; outline-offset: 2px; 
+}
+
+
+.button.util { 
+    background: var(--btnUtilColor); 
+}
+.button.operation { 
+    background: var(--btnOpColor); 
+}
+.button:hover { 
+    filter: brightness(1.15); 
+}
+
+.span-2 { 
+    grid-column: span 2; 
 }
