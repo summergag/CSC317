@@ -56,10 +56,13 @@ function clearAll() {
 // ===== + / - Toggle =====
 function toggleSign() {
     if (state.displayValue === "0") return;
-    if (state.displayValue.startsWith("-")) {
-        state.displayValue = state.displayValue.slice(1);
-    } else {
-        state.displayValue = "-" + state.displayValue;
+
+    state.displayValue = state.displayValue.startsWith("-")
+        ? state.displayValue.slice(1)
+        : "-" + state.displayValue;
+
+    if (!state.operator) {
+        state.firstOperand = Number(state.displayValue);
     }
 }
 
@@ -87,11 +90,11 @@ function calculate(a, operator, b) {
 
 // ===== Operator Handling =====
 function handleOperator(op) {
-    const inputValue = state.displayValue;
+    const inputValue = Number(state.displayValue);
 
     if (state.firstOperand === null) {
         state.firstOperand = inputValue;
-    } else if (state.operator) {
+    } else if (state.operator && !state.waitingForSecond) {
         const result = calculate(state.firstOperand, state.operator, inputValue);
         state.displayValue = String(result);
         state.firstOperand = result;
@@ -106,10 +109,12 @@ function handleOperator(op) {
 function equals() {
     if (!state.operator) return;
 
+    const inputValue = Number(state.displayValue);  
+
     const result = calculate(
         state.firstOperand,
         state.operator,
-        state.displayValue
+        inputValue
     );
 
     state.displayValue = String(result);
