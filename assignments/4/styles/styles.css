@@ -27,7 +27,7 @@ header h1 {
 }
 
 /* ====== Navigation ====== */
-nav ul {
+header nav ul {
   list-style: none;
   padding: 0;
   margin: 15px 0;
@@ -37,7 +37,7 @@ nav ul {
   flex-wrap: wrap;
 }
 
-nav ul li a {
+header nav ul li a {
   text-decoration: none;
   color: white;
   font-weight: 400;
@@ -53,6 +53,10 @@ nav ul li a:focus-visible {
   box-shadow: 0 4px 10px rgba(64, 224, 208, 0.4);
   transform: translateY(-2px);
   outline: none;
+}
+
+main nav ul a {
+  color: #c9d1d9;
 }
 
 /* ====== Main Content ====== */
