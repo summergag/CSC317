@@ -120,13 +120,13 @@ function equals() {
 
 
 
-// ===== CLICK HANDLING (MATCHING YOUR HTML EXACTLY) =====
+// ===== CLICK HANDLING =====
 buttons.forEach(button => {
     button.addEventListener('click', () => {
 
         const digit = button.dataset.digit;
-        const operator = button.dataset.operation;   // <--- YOU USED data-operation
-        const decimal = button.dataset.decimal;       // <--- YOU USED data-decimal
+        const operator = button.dataset.operation;
+        const decimal = button.dataset.decimal; 
         const action = button.dataset.action;
 
         if (digit !== undefined) {
