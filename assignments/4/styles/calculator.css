@@ -41,9 +41,9 @@ header nav a {
 
 nav a:hover,
 nav a:focus-visible {
-  background-color: #40E0D0;
+  background-color: #940e51;
   color: #0d1117;
-  box-shadow: 0 4px 10px rgba(64, 224, 208, 0.4);
+  box-shadow: 0 4px 10px #c55e92;
   transform: translateY(-2px);
   outline: none;
 }
