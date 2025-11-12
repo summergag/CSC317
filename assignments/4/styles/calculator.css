@@ -20,12 +20,32 @@ html, body {
 
 body {
     margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    font-family: system-ui, Arial, sans-serif;
     background: var(--backgroundColor);
     color: var(--textColor);
-    display: gird;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    align-self: flex-start;
+    text-align: left;
     padding: 50px;
+}
+
+header nav a {
+  color: #c9d1d9;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background-color: #40E0D0;
+  color: #0d1117;
+  box-shadow: 0 4px 10px rgba(64, 224, 208, 0.4);
+  transform: translateY(-2px);
+  outline: none;
 }
 
 .calculator {
