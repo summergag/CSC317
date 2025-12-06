@@ -1,9 +1,33 @@
 [
   {
-    "id": 1764984613189,
+    "id": "176763f3-56b9-4faf-85e5-507402fff60f",
     "title": "Zootopia 2",
-    "director": "Jared Bush",
+    "year": 2025,
+    "description": "Follows Judy Hopps and Nick Wilde as they go undercover in the mysterious Marsh Market to solve a case involving a reptile named Gary, uncovering a conspiracy about the city's origins and testing their partnership as they explore new, wilder parts of Zootopia, from underwater realms to snowy deserts.",
+    "reviews": [
+      {
+        "username": "SummerGag",
+        "rating": 5,
+        "comment": "Such a good movie. Loved all the references to other movies and easter eggs!"
+      },
+      {
+        "username": "NateMuniz",
+        "rating": 4,
+        "comment": "I think I loved this movie more than my kids haha. Didn't think it could be better than the first movie, but it was!"
+      }
+    ]
+  },
+  {
+    "id": "2a9124b9-b0fb-4e76-b39d-76e1b184fbb7",
+    "title": "Eternity",
     "year": "2025",
-    "description": "follows bunny cop Judy Hopps and fox con-artist-turned-partner Nick Wilde as their dynamic partnership is tested by a new mystery involving a sly snake named Gary De'Snake and a stolen journal, forcing them to go undercover and explore hidden, wilder parts of Zootopia, revealing dark secrets about the city's origins and testing their bond while uncovering a vast conspiracy"
+    "description": "An A24 afterlife romantic comedy where recently deceased Joan (Elizabeth Olsen) finds herself in a celestial waiting room, forced to choose between spending eternity with her beloved, long-married husband Larry (Miles Teller) or her dreamy first love, Luke (Callum Turner), who died young and has waited for her, forcing her to weigh idealized romance against the complexities of a life truly lived. ",
+    "reviews": [
+      {
+        "username": "NateMuniz",
+        "rating": 4,
+        "comment": "I loved this movie. It was a very emotional movie, definitely cried haha! But worth the watch :)"
+      }
+    ]
   }
 ]

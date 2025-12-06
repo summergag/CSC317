@@ -1,49 +1,62 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
+const { v4: uuid } = require("uuid");
 
-const usersFile = path.join(__dirname, '../../models/users.json');
-
-// Helper to read users
-function readUsers() {
-    if (!fs.existsSync(usersFile)) return [];
-    const data = fs.readFileSync(usersFile);
-    return JSON.parse(data);
+// Load users
+function loadUsers() {
+    const file = path.join(__dirname, "../../models/users.json");
+    if (!fs.existsSync(file)) fs.writeFileSync(file, "[]");
+    return JSON.parse(fs.readFileSync(file));
 }
 
-// Helper to write users
-function writeUsers(users) {
-    fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
+// Save users
+function saveUsers(users) {
+    const file = path.join(__dirname, "../../models/users.json");
+    fs.writeFileSync(file, JSON.stringify(users, null, 2));
 }
 
 // REGISTER
-router.post('/register', (req, res) => {
+router.post("/register", (req, res) => {
     const { username, email, password } = req.body;
-    const users = readUsers();
 
-    // Check if email exists
-    if (users.find(user => user.email === email)) {
-        return res.send('Email already registered');
+    const users = loadUsers();
+
+    if (users.find(u => u.email === email)) {
+        return res.send("Email already exists");
     }
 
-    users.push({ username, email, password });
-    writeUsers(users);
+    const newUser = {
+        id: uuid(),
+        username,
+        email,
+        password
+    };
 
-    // Redirect to login page after registration
-    res.redirect('/login');
+    users.push(newUser);
+    saveUsers(users);
+
+    res.redirect("/login");
 });
 
-// LOGIN (simplified)
-router.post('/login', (req, res) => {
-    const { email, password } = req.body;
-    const users = readUsers();
+// LOGIN
+router.post("/login", (req, res) => {
+    const { username, password } = req.body;
+    const users = loadUsers();
 
-    const user = users.find(u => u.email === email && u.password === password);
-    if (!user) return res.send('Invalid email or password');
+    const user = users.find(u => u.username === username && u.password === password);
+    if (!user) return res.send("Invalid credentials");
 
-    // For now, just redirect to movies page
-    res.redirect('/movies');
+    req.session.user = user;
+    res.redirect("/movies");
+});
+
+// LOGOUT
+router.get("/logout", (req, res) => {
+    req.session.destroy(() => {
+        res.redirect("/login");
+    });
 });
 
 module.exports = router;
