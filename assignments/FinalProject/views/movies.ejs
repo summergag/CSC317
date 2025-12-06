@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Movies</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>All Movies</h1>
+
+<a href="/add-movie">Add a New Movie</a>
+
+<% if (movies.length === 0) { %>
+  <p>No movies added yet.</p>
+<% } else { %>
+  <ul>
+    <% movies.forEach(movie => { %>
+      <li>
+        <strong><%= movie.title %></strong> (<%= movie.year %>)<br/>
+        Director: <%= movie.director %><br/>
+        Description: <%= movie.description %>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>
+
+
+</body>
+</html>
