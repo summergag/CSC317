@@ -1,11 +1,12 @@
 const express = require("express");
 const path = require("path");
 const session = require("express-session");
+const fs = require("fs");
 
 const app = express();
 const PORT = 3000;
 
-// MIDDLEWARE
+// ----------- MIDDLEWARE -----------
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -17,39 +18,46 @@ app.use(
     })
 );
 
-// STATIC FILES
+// ----------- STATIC FILES -----------
 app.use(express.static(path.join(__dirname, "public")));
 
-// EJS SETUP
+// ----------- EJS SETUP -----------
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// ROUTES
+// ----------- ROUTES -----------
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/movies", require("./routes/api/movies"));
 
-// LOAD MOVIES FUNCTION
-const fs = require("fs");
+// ----------- READ MOVIES FUNCTION -----------
 function readMovies() {
-    const p = path.join(__dirname, "models/movies.json");
-    if (!fs.existsSync(p)) fs.writeFileSync(p, "[]");
-    return JSON.parse(fs.readFileSync(p));
+    const filePath = path.join(__dirname, "models/movies.json");
+
+    if (!fs.existsSync(filePath)) {
+        fs.writeFileSync(filePath, "[]"); // ensure file exists
+    }
+
+    return JSON.parse(fs.readFileSync(filePath));
 }
 
-// PAGES
+// ----------- PAGE ROUTES -----------
+
+// Default → redirect to login
 app.get("/", (req, res) => {
     res.redirect("/login");
 });
 
+// Login page
 app.get("/login", (req, res) => {
     res.render("login");
 });
 
+// Register page
 app.get("/register", (req, res) => {
     res.render("register");
 });
 
-// All movies list
+// All movies page
 app.get("/movies", (req, res) => {
     if (!req.session.user) return res.redirect("/login");
 
@@ -57,7 +65,7 @@ app.get("/movies", (req, res) => {
     res.render("movies", { movies });
 });
 
-// Single movie details page
+// Single movie details
 app.get("/movies/:id", (req, res) => {
     if (!req.session.user) return res.redirect("/login");
 
@@ -66,12 +74,20 @@ app.get("/movies/:id", (req, res) => {
 
     if (!movie) return res.send("Movie not found");
 
+    // Ensure movie.reviews exists
+    movie.reviews = movie.reviews || [];
+
     // Check if user already reviewed
-    const userReviewed = movie.reviews.some(r => r.username === req.session.user.username);
+    const userReviewed = movie.reviews.some(
+        r => r.username === req.session.user.username
+    );
 
     res.render("movieDetails", { movie, userReviewed });
 });
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// ----------- START SERVER -----------
+app.listen(PORT, () =>
+    console.log(`Server running on http://localhost:${PORT}`)
+);
 
 module.exports = app;
