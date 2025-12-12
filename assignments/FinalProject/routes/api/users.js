@@ -45,10 +45,20 @@ router.post("/login", (req, res) => {
     const { username, password } = req.body;
     const users = loadUsers();
 
-    const user = users.find(u => u.username === username && u.password === password);
-    if (!user) return res.send("Invalid credentials");
+    const user = users.find(
+        u => u.username === username && u.password === password
+    );
 
-    req.session.user = user;
+    if (!user) {
+        // Render login.ejs again WITH an error message
+        return res.render("login", { error: "Invalid username or password." });
+    }
+
+    req.session.user = {
+        id: user.id,
+        username: user.username
+    };
+
     res.redirect("/movies");
 });
 
